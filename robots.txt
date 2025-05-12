@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private/
+Allow: /
+
+Sitemap: https://indomet.github.io/sitemap.xml
