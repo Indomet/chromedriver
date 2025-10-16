@@ -293,6 +293,7 @@ export default function Index() {
               <Info className="h-5 w-5 text-blue-500" />
               <AlertTitle className="text-blue-700">ChromeDriver for Testing Info</AlertTitle>
               <AlertDescription className="text-sm text-gray-700">
+                <p className="mb-2">If you don't want to use the tool above, you can use the link below.</p> 
                 <p className="mb-2">You're downloading directly from Google's official 'Chrome for Testing' storage.</p>
                 <p className="mb-2">If you know your Chrome version (<code>v</code>) and platform (<code>p</code>), you can download by replacing the placeholders in:</p>
                 <div className="relative">
