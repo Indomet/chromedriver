@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="darkChromeBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#202124" />
+      <stop offset="100%" stop-color="#0f1012" />
+    </linearGradient>
+  </defs>
+
+  <rect x="16" y="16" width="480" height="480" rx="110" fill="url(#darkChromeBg)" stroke="#4285f4" stroke-width="10" stroke-opacity="0.7"/>
+
+  <g transform="translate(256, 235)">
+    <circle r="155" fill="#34a853"/>
+    <path d="M 0 0 L -134 -77 A 155 155 0 0 1 134 -77 Z" fill="#ea4335"/>
+    <path d="M 0 0 L 134 -77 A 155 155 0 0 1 0 155 Z" fill="#fbbc04"/>
+    <circle r="75" fill="#ffffff"/>
+    <circle r="60" fill="#4285f4"/>
+  </g>
+
+  <!-- Download Arrow -->
+  <rect x="236" y="370" width="40" height="60" rx="6" fill="#ffffff"/>
+  <polygon points="216,420 296,420 256,465" fill="#ffffff"/>
+</svg>
