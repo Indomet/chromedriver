@@ -2,39 +2,39 @@ import React, { useEffect, useRef } from 'react';
 import { Card } from "@/components/ui/card";
 
 const BottomAdBanner: React.FC = () => {
-  const adInitialized = useRef(false);
+  const insRef = useRef<HTMLModElement>(null);
 
   useEffect(() => {
-    // Only initialize once
-    if (adInitialized.current) return;
-    
-    // Delay initialization to ensure DOM is ready
     const timer = setTimeout(() => {
       try {
-        if (window.adsbygoogle) {
-          window.adsbygoogle = window.adsbygoogle || [];
-          window.adsbygoogle.push({});
-          adInitialized.current = true;
+        const el = insRef.current;
+        if (el && !el.getAttribute('data-adsbygoogle-status') && !el.dataset.adLoaded) {
+          el.dataset.adLoaded = "1";
+          (window as any).adsbygoogle = (window as any).adsbygoogle || [];
+          (window as any).adsbygoogle.push({});
         }
       } catch (error) {
-        console.error("Error initializing ad:", error);
+        // Silently handle ad blockers
       }
-    }, 10);
-    
+    }, 100);
+
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="mt-8">
+    <div className="mt-8" aria-label="Bottom ad banner">
       <Card className="overflow-hidden shadow-md" style={{ minHeight: '250px' }}>
-        <ins className="adsbygoogle"
-          id="ad-banner"
+        <ins
+          ref={insRef}
+          className="adsbygoogle"
+          id="chromedriver-ad-bottom"
           style={{ display: 'block' }}
           data-ad-client="ca-pub-6126218905254433"
           data-ad-slot="8875353828"
+          data-ad-channel="chromedriver_bottom_banner"
           data-ad-format="auto"
-          data-full-width-responsive="true">
-        </ins>
+          data-full-width-responsive="true"
+        />
       </Card>
     </div>
   );
